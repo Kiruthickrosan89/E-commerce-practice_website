@@ -1,16 +1,20 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
 import { store } from './redux/Store.js'
 import './index.css'
 import App from './App.jsx'
+import MainContext from './context/MainContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
       <BrowserRouter>
-           <provider store={store}>
-                <App />
-           </provider>
+           <Provider store={store}>
+               <MainContext>
+                    <App />
+               </MainContext>
+           </Provider>
       </BrowserRouter>
   </StrictMode>
 )
