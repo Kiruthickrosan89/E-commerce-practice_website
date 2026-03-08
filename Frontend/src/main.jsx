@@ -6,12 +6,14 @@ import { store } from './redux/Store.js'
 import './index.css'
 import App from './App.jsx'
 import MainContext from './context/MainContext.jsx'
+import { ToastContainer } from 'react-toastify'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
       <BrowserRouter>
            <Provider store={store}>
                <MainContext>
+                  <ToastContainer/>
                     <App />
                </MainContext>
            </Provider>

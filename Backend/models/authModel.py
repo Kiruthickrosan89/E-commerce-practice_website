@@ -24,3 +24,7 @@ def validate_name(cls, value):
     if len(value) < 3:
         raise ValueError( " Value must be greater than 3 Characters")
     return value
+
+class LoginUser(BaseModel):
+    email: str = Field(...)
+    password: str = Field(..., min_length=6)
